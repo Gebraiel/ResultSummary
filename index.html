@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    :root{
+      --Light-slate-blue:hsl(252, 100%, 67%);
+      --Light-royal-blue: hsl(241, 81%, 54%);
+      --Violet-blue: hsla(256, 72%, 46%, 1);
+      --Persian-blue: hsla(241, 72%, 46%, 0);
+      --Pale-blue: hsl(221, 100%, 96%);
+      --Light-lavender: hsl(241, 100%, 89%);
+      --Dark-gray-blue: hsl(224, 30%, 27%);
+
+      --Light-red: hsl(0, 100%, 67%);
+      --Orangey-yellow: hsl(39, 100%, 56%);
+      --Green-teal: hsl(166, 100%, 37%);
+      --Cobalt-blue: hsl(234, 85%, 45%);
+    }
+    *{
+      padding:0;
+      margin:0;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: 'Hanken Grotesk', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--Pale-blue);
+    }
+    .container{
+      display: grid;
+      grid-template-columns: repeat(2,300px);
+      background-color: white;
+      border-top-right-radius:15px;
+      border-bottom-right-radius:15px;
+    }
+    .blue-half{
+      background: linear-gradient(180deg,var(--Light-slate-blue),var(--Light-royal-blue));
+      color:var(--Light-lavender);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center ;
+      gap:20px;
+      padding:20px 40px 50px;
+      text-align: center;
+    }
+    .circle{
+      background: linear-gradient(180deg,var(--Violet-blue),var(--Persian-blue));
+      width:150px;
+      height:150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .white-half{
+      padding:20px;
+    }
+    .white-half h2{
+      color: var(--Dark-gray-blue);
+    }
+    ul li{
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--Pale-blue);
+      margin:20px 0;
+      padding:10px;
+      border-radius: 10px;
+    }
+    ul li .title.red{
+      color:var(--Light-red);
+    }
+    ul li .title.orange{
+      color:var(--Orangey-yellow);
+    }
+    ul li .title.green{
+      color:var(--Green-teal);
+    }
+    ul li .title.blue{
+      color:var(--Cobalt-blue);
+    }
+    ul li .rate{
+      color:hsl(210deg 10.98% 67.84%);
+    }
+    ul li b{
+      color:var(--Dark-gray-blue);
+    }
+    ul li img{
+      vertical-align: middle;
+      margin-right:10px;
+
+    }
+    .circle strong,.message h2{
+      color:white;
+    }
+    .circle strong{
+      font-size:40px;
+    }
+    .message h2{
+      margin-bottom:20px;
+    }
+    button{
+      padding:20px;
+      width: 100%;
+      border-radius: 30px;
+      outline: none;
+      border:none;
+      background: linear-gradient(180deg,var(--Dark-gray-blue),var(--Dark-gray-blue));
+      color:white;
+      cursor: pointer;
+      transition:0.3s ease;
+    }
+    button:hover{
+      background: linear-gradient(180deg,var(--Light-slate-blue),var(--Light-royal-blue));
+    }
+    @media(max-width:600px){
+      .container{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="blue-half">
+      <h3>Your Result</h3>
+      <div class="circle">
+        <strong>76</strong>
+        <p>of 100</p>
+      </div>
+      <div class="message">
+        <h2>Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tasks</p>
+      </div>
+    </div>
+    <div class="white-half">
+      <h2>Summary</h2>
+      <ul>
+        <li>
+          <div class="title red">
+            <img src="assets/images/icon-reaction.svg" alt="reaction-icon">Reaction
+          </div>
+          <div class="rate">
+            <b>80 </b> /100
+          </div>
+        </li>
+        <li>
+          <div class="title orange">
+            <img src="assets/images/icon-memory.svg" alt="Memory-icon">Memory
+          </div>
+          <div class="rate">
+            <b>92 </b> /100
+          </div>
+        </li>
+        <li>
+          <div class="title green">
+            <img src="assets/images/icon-verbal.svg" alt="Verbal-icon">Verbal
+          </div>
+          <div class="rate">
+            <b>61 </b> /100
+          </div>
+        </li>
+        <li>
+          <div class="title blue">
+            <img src="assets/images/icon-visual.svg" alt="Visual-i">Visual
+          </div>
+          <div class="rate">
+            <b>72 </b> /100
+          </div>
+        </li>
+      </ul>
+      <button>Continue</button>
+    </div>
+  </div>
+  
+</body>
+</html>
